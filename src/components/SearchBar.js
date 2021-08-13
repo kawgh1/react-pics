@@ -5,10 +5,18 @@ class SearchBar extends React.Component {
     
     state = { term: '' };
 
+    // disable an HTML form automatically submitting (and refreshing the page, re-rendering everything) when a user
+    // hits 'enter' or 'return' in an text input field
+    onFormSubmit(event) {
+        event.preventDefault();
+
+        console.log(this.state.term)
+    }
+
     render() {
         return (
             <div className="ui segment">
-                <form className="ui form">
+                <form onSubmit={this.onFormSubmit} className="ui form">
                     <div className="field">
                     <label>Image Search</label>
                         {/* when we assign a function onInputChange to a a property or event handler, 
