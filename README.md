@@ -34,42 +34,44 @@
     - To prevent auto-refreshing the page and thus re-rendering all the components when a user hits 'enter' or 'return'
     - Ex)
 
-        onFormSubmit(event) {
-            event.preventDefault();
-        }
+            onFormSubmit(event) {
+                event.preventDefault();
+            }
 
-        ...
+            ...
 
             <form onSubmit={this.onFormSubmit} className="ui form">
                 <input .... >
             </form>
 
-- #### The 'this' problem in Javascript
-- **Different solutions:**
+
+- # The 'this' problem in Javascript
+- ##Different solutions:##
     - **binding the method within a constructor**
 
         class Car {
-            constructor() {
-                this.drive = this.drive.bind(this);
-            }
+                constructor() {
+                    this.drive = this.drive.bind(this);
+                }
 
-            setDriveSound(sound) {
-                this.sound = sound;
-            }
+                setDriveSound(sound) {
+                    this.sound = sound;
+                }
 
-            drive() {
-                return this.sound;
-            }
-        }
+                drive() {
+                    return this.sound;
+                }
+                }
 
-        const car = new Car();
-        car.setDriveSound('vroom');
+            const car = new Car();
+            car.setDriveSound('vroom');
 
-        const drive = car.drive;
+            const drive = car.drive;
+
     
     - **Turn the function into an arrow function () => {...}**
         - anytime you have a function in Javascript its going to break the 'this'
-        - onFormSubmit(event) {...} is really onFormSubmit: function(event){...}
+        - **onFormSubmit(event) {...}** is really **onFormSubmit: function(event){...}**
             - **One for the sweet things about ES2015 is 'this' is automatically binded in arrow functions () => {...}
             - So, in another way to fix the 'this' problem of a function is to turn it into an arrow function
                 - **onFormSubmit = (event) => {...}**
