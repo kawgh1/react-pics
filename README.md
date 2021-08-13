@@ -75,3 +75,10 @@
             - **One for the sweet things about ES2015 is 'this' is automatically binded in arrow functions () => {...}
             - So, in another way to fix the 'this' problem of a function is to turn it into an arrow function
                 - **onFormSubmit = (event) => {...}**
+
+
+- ## Communicating Child to Parent (up the chain)
+    - Normally in React, props can only be passed down from Parent to Child Components
+        - However, you can define a **callback method** in the **Parent Component** and pass that method down to the **Child** as a **prop**
+            - The Child will then call that callback method like normal and it will 'callback' up the chain to the Parent
+                - **ie, returning a value from a method called by a Child to its Parent Component**
