@@ -5,7 +5,7 @@
   - < link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
   
 ### Notes
-- Things I learned
+#### Things I learned
     - Inline CSS styling is different in JSX
     - regular HTML - < div className="ui container" style="marginTop: 10px;">
-    - JSX - < div className="ui container" style={{marginTop: '10px'}}>
+    - JSX - < div className="ui container" **style={{marginTop: '10px'}}**>
