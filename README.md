@@ -15,6 +15,7 @@
     - **npm install --save axios**
     - Example GET call to API with Unsplash authorization header and query param
         
+        Ex)
         // user inputs 'term' to search for in text field
         onSearchSubmit(term) {
 
