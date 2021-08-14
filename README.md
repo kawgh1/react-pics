@@ -16,18 +16,18 @@
     - Example GET call to API with Unsplash authorization header and query param
         
         Ex)
-        
-        // user inputs 'term' to search for in text field
-        onSearchSubmit(term) {
 
-            // axios call
-            axios.get('https://api.unsplash.com/search/photos', {
-                params: { query: term},
-                headers: {
-                    Authorization: 'Client-ID jFsdf0As0910912HJ0hf0-9jhasd@lk'
-                }
-            })
-        }
+            // user inputs 'term' to search for in text field
+            onSearchSubmit(term) {
+
+                // axios call
+                axios.get('https://api.unsplash.com/search/photos', {
+                    params: { query: term},
+                    headers: {
+                        Authorization: 'Client-ID jFsdf0As0910912HJ0hf0-9jhasd@lk'
+                    }
+                })
+            }
 
 
   
