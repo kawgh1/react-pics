@@ -5,9 +5,29 @@
   - < link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
 
 - #### Unsplash API
+    - https://api.unsplash.com/
+    - Documentation - https://unsplash.com/documentation
+    - Authorization (private key) required to access
+        - https://unsplash.com/documentation#public-authentication
+        - Have to sign up for free account to access API
 - #### Axios
     - 3rd party package for handling API requests, beefed up version of fetch()
     - **npm install --save axios**
+    - Example GET call to API with Unsplash authorization header and query param
+        
+        // user inputs 'term' to search for in text field
+        onSearchSubmit(term) {
+
+            // axios call
+            axios.get('https://api.unsplash.com/search/photos', {
+                params: { query: term},
+                headers: {
+                    Authorization: 'Client-ID jFsdf0As0910912HJ0hf0-9jhasd@lk'
+                }
+            })
+        }
+
+
   
 ### Notes
 #### Things I learned

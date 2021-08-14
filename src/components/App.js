@@ -8,7 +8,13 @@ class App extends React.Component {
     // callback function we're passing down to SearchBar as a prop to use as a callback from Child SearchBar
     onSearchSubmit(term) {
         
-        console.log(term);
+        // axios call
+        axios.get('https://api.unsplash.com/search/photos', {
+            params: { query: term},
+            headers: {
+                Authorization: 'Client-ID TxEHhTfNK3GkOTUMi0uK5u5mKrDKZv9KRQ-xydovOLk'
+            }
+         })
     }
 
 
