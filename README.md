@@ -17,8 +17,9 @@
         
         Ex)
 
-            // user inputs 'term' to search for in text field
-            onSearchSubmit(term) {
+            state = {images: []};
+
+            onSearchSubmit = async (term) =>
 
                 // axios call
                 axios.get('https://api.unsplash.com/search/photos', {
@@ -27,6 +28,9 @@
                         Authorization: 'Client-ID jFsdf0As0910912HJ0hf0-9jhasd@lk'
                     }
                 })
+
+                this.setState({ images: response.data.results });
+                
             }
 
 
