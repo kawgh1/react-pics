@@ -3,6 +3,11 @@
 ### Tools Used
 - #### Semantic UI CDN
   - < link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+
+- #### Unsplash API
+- #### Axios
+    - 3rd party package for handling API requests, beefed up version of fetch()
+    - **npm install --save axios**
   
 ### Notes
 #### Things I learned
@@ -46,7 +51,7 @@
 
 
 - # The 'this' problem in Javascript
-- ##Different solutions:##
+- ## Different solutions:##
     - **binding the method within a constructor**
 
         class Car {
@@ -78,7 +83,7 @@
 
 
 - ## Communicating Child to Parent (up the chain)
-    - Normally in React, props can only be passed down from Parent to Child Components
+    - Normally in React, **props can only be passed down from Parent to Child Components**
         - However, you can define a **callback method** in the **Parent Component** and pass that method down to the **Child** as a **prop**
             - The Child will then call that callback method like normal and it will 'callback' up the chain to the Parent
                 - **ie, returning a value from a method called by a Child to its Parent Component**

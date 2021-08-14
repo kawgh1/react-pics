@@ -8,11 +8,14 @@ class SearchBar extends React.Component {
     // disable an HTML form automatically submitting (and refreshing the page, re-rendering everything) when a user
     // hits 'enter' or 'return' in an text input field
     // onFormSubmit(event) { --- turned the function into an arrow function to fis the 'this' problem
-    
+
     onFormSubmit = (event) => {
         event.preventDefault();
 
-        console.log(this.state.term)
+        // console.log(this.state.term)
+
+        // callback function from Parent App.js that returns the value from onFormSubmit in SearchBar
+        this.props.onSubmit(this.state.term);
     }
 
     render() {
