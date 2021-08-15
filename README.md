@@ -40,6 +40,46 @@
 - #### Inline CSS styling is different in JSX
     - regular HTML - < div className="ui container" style="margin-top: 10px;">
     - **JSX** - < div className="ui container" **style={{marginTop: '10px'}}**>
+
+- #### All elements displayed as part of a List object should have key values
+    - This actually makes React more performant and less error prone
+
+- #### Dynamic image display using React
+    - 1. Let the ImageCard render itself and its image
+    - 2. Reach into the DOM and figure out the height of the image
+    - 3. Set the image height on State to get the component to re-render
+    - 4. When re-rendering, assign a 'grid-row-end' CSS Grid property to the image to make sure the image takes up the appropriate amount of space
+        - This creates the **"Brick and Mortar"** image gallery effect, dynamically regardless of what images are displayed
+    - #### React Refs
+        - Gives access to a single DOM element
+        - We create refs in the constructor, assign them to instance variables, then pass to a particular JSX element as props
+            - We call a function inside the constructor to create a reference and assign it as an instance variable on the Class
+                - These refs are not going to change over time and we're never going to call setState on them
+                - In general, we only put data in State if we expect it to change over time
+            - **Once we assign that ref as an instance variable on our Class, we're then going to go down to a render method and pass that ref into some particular JSX element as a prop**
+
+        Ex)
+
+            class ImageCard extends React.Component {
+
+                constructor(props) {
+                    super(props);
+
+                    this.imageRef = React.createRef();
+                }
+
+                render() {
+                    return (
+                        <div>
+                            <img ref={this.imageRef} alt={this.props.image.description}
+                                src={this.props.image.urls.regular}
+                            />
+                        </div>
+                    );
+                }
+            }
+
+            
 - #### Controlled vs. Uncontrolled elements
     - like an input field
         - React can answer --> what is the state of the input field ***right now***? HTML can't 
