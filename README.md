@@ -33,6 +33,7 @@
                 
             }
 
+![App Component Diagram](https://github.com/kawgh1/react-pics/blob/main/app-comp-heir.png)
 
   
 ### Notes
